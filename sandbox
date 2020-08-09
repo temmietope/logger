@@ -1,0 +1,66 @@
+// let character = 'mario';
+// let age=30;
+// let isBlackbelt = false;
+
+
+// const circ = (diameter: number)=>{
+//     return diameter*Math.PI
+// }
+
+// console.log(circ(7.5))
+
+let arr: string[]
+let mixed: (string | number)[] = [] //for array
+
+let uid: string | number  //for other types
+
+const add = (a: number, b: number): number => {
+    return a + b;
+}
+
+let result = add(10, 7)
+
+
+
+//TYPE ALIASES
+type StringOrNum = string | number;
+type objWithName = { name: string, uid: StringOrNum }
+
+// const logDetails = (uid:string | number, item: string) => {
+//     console.log(`${item} has a uid od ${uid}`)
+// }
+// const greetAgain = (user: { name: string, uid: string | number }) => {
+//     console.log(`${user.name} says hello`)
+// }
+
+
+const logDetails = (uid: StringOrNum, item: string) => {
+    console.log(`${item} has a uid od ${uid}`)
+}
+const greet = (user: objWithName) => {
+    console.log(`${user.name} says hello`)
+}
+
+
+
+
+
+//FUNCTION SIGNATURE
+
+// example1
+let greeter: (a:string, b:string) => void;
+greeter = (name:string, greeting: string)=>{
+    console.log(`${name} says ${greeting}`)
+}
+
+// example2
+let calc: (a:number, b:number, c:string) => number;
+calc = (numOne: number, numTwo: number, action: string)=>{
+   if(action === 'add'){
+       return numOne + numTwo;
+   } else {
+       return numOne - numTwo
+   }
+}
+
+
